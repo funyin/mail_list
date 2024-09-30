@@ -31,10 +31,13 @@ class HomePage extends HookConsumerWidget with UiKits {
         AppBar(
           title: const Text("Mail"),
           actions: [
-            IconButton(onPressed: () {}, icon: SvgPicture.asset(Assets.assetsMenu)),
-            IconButton(onPressed: () {}, icon: SvgPicture.asset(Assets.assetsSearch)),
+            IconButton(
+                onPressed: () {}, icon: SvgPicture.asset(Assets.assetsMenu)),
+            IconButton(
+                onPressed: () {}, icon: SvgPicture.asset(Assets.assetsSearch)),
           ],
         ),
+        const Divider(color: Color(0xffE0E0E0), height: 1, thickness: 1,),
         Expanded(child: Center(
           child: Builder(
             builder: (context) {
@@ -44,7 +47,9 @@ class HomePage extends HookConsumerWidget with UiKits {
                     return const AppEmptyView(title: "No Emails Available");
                   }
                   var unreadMessages =
-                      data.where((element) => !element.read).length;
+                      data
+                          .where((element) => !element.read)
+                          .length;
                   return Column(
                     children: [
                       if (unreadMessages > 0)
@@ -68,19 +73,20 @@ class HomePage extends HookConsumerWidget with UiKits {
                         ),
                       Expanded(
                           child: RefreshIndicator.adaptive(
-                        onRefresh: () async {
-                          getMails();
-                        },
-                        child: ListView.separated(
-                          padding: EdgeInsets.zero,
-                            itemBuilder: (context, index) =>
-                                MailListItem(mail: data[index]),
-                            separatorBuilder: (context, index) => const Divider(
+                            onRefresh: () async {
+                              getMails();
+                            },
+                            child: ListView.separated(
+                                padding: EdgeInsets.zero,
+                                itemBuilder: (context, index) =>
+                                    MailListItem(mail: data[index]),
+                                separatorBuilder: (context, index) =>
+                                const Divider(
                                   height: 1,
                                   thickness: 1,
                                 ),
-                            itemCount: data.length),
-                      ))
+                                itemCount: data.length),
+                          ))
                     ],
                   );
                 },
@@ -94,7 +100,6 @@ class HomePage extends HookConsumerWidget with UiKits {
             },
           ),
         )),
-        const Divider(color: Color(0xffE0E0E0))
       ],
     );
   }

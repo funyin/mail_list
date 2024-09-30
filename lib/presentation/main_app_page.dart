@@ -21,11 +21,11 @@ class MainAppPage extends HookWidget with UiKits {
         onPageChanged: (value) {
           activePage.value = value;
         },
-        children: [
-          const HomePage(),
-          const ChatPage(),
-          const CalendarPage(),
-          const SettingsPage(),
+        children: const [
+          HomePage(),
+          ChatPage(),
+          CalendarPage(),
+          SettingsPage(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
