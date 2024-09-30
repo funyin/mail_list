@@ -60,7 +60,7 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 flutter_native_splash:
-  image: assets/ration-logo.png
+  image: assets/ration_logo_large.png
   color: "#ffffff"
 
 flutter_launcher_icons:

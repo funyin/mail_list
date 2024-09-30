@@ -8,6 +8,7 @@ class Assets {
   static const String assetsMailActive = 'assets/mail_active.svg';
   static const String assetsMenu = 'assets/menu.svg';
   static const String assetsRationLogo = 'assets/ration-logo.png';
+  static const String assetsRationLogoLarge = 'assets/ration_logo_large.png';
   static const String assetsSearch = 'assets/search.svg';
   static const String assetsSettings = 'assets/settings.svg';
   static const String assetsSplashLogo = 'assets/splash_logo.png';
